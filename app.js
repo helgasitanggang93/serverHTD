@@ -5,8 +5,9 @@ const port = process.env.PORT || 3000;
 const todoRoutes = require('./routes');
 const cors = require('cors');
 const mongoose = require('mongoose');
+var mongoURL = process.env.MONGODB_URI || 'mongodb://localhost:27017/react-todo'
 mongoose.set('useNewUrlParser', true);
-mongoose.connect('mongodb://localhost:27017/react-todo', function (err) {
+mongoose.connect(mongoURL, function (err) {
     if (err) {
         console.log(err);
     }else {
