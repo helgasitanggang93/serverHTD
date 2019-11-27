@@ -3,6 +3,7 @@ const {compare} = require('../helpers/bycrpt')
 const {sign} = require('../helpers/jwt')
 class UserController {
     static create(req,res){
+        console.log(req.body)
         const {name, email, password, role} = req.body
         User.create({
             name,
